@@ -5,3 +5,5 @@ Home tasks for Selenium course
 - Files
 - Windows
 - Waits
+
+how to use git? :)
