@@ -4,6 +4,8 @@ import math
 
 from selenium import webdriver
 
+driver = webdriver.Firefox('C:\\geckodriver\\geckodriver.exe')
+
 @pytest.fixture()
 def browser():
     print("\nstart browser for test..")
