@@ -1,24 +1,12 @@
-import pytest
+
 import time
 import math
-
-from selenium import webdriver
-
-@pytest.fixture()
-def browser():
-    print("\nstart browser for test..")
-    browser = webdriver.Chrome()
-    yield browser
-    print("\nquit browser..")
-    browser.quit()
 
 def calc():
     return str(math.log(int(time.time()-0.2)))
 
 @pytest.mark.parametrize('link', ["https://stepik.org/lesson/236895/step/1","https://stepik.org/lesson/236896/step/1","https://stepik.org/lesson/236897/step/1","https://stepik.org/lesson/236898/step/1","https://stepik.org/lesson/236899/step/1","https://stepik.org/lesson/236903/step/1","https://stepik.org/lesson/236904/step/1","https://stepik.org/lesson/236905/step/1"])
 def test_links(browser, link):
-#def test_links(browser):
-    #link = "https://stepik.org/lesson/236895/step/1"
     print(f"start test {link}")
     browser.get(link)
 
