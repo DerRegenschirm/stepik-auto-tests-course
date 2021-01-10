@@ -1,16 +1,16 @@
-import pytest
+#import pytest
 import time
 import math
 
-from selenium import webdriver
+#from selenium import webdriver
 
-@pytest.fixture()
-def browser():
-    print("\nstart browser for test..")
-    browser = webdriver.Chrome()
-    yield browser
-    print("\nquit browser..")
-    browser.quit()
+#@pytest.fixture()
+#def browser():
+#    print("\nstart browser for test..")
+#    browser = webdriver.Chrome()
+#    yield browser
+#    print("\nquit browser..")
+#    browser.quit()
 
 def calc():
     return str(math.log(int(time.time()-0.2)))
