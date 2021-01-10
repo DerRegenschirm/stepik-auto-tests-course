@@ -1,3 +1,5 @@
+import pytest
+
 def calc():
     return str(math.log(int(time.time()-0.2)))
 
