@@ -19,7 +19,10 @@ def browser():
 def test_links(browser, link):
     print(f"start test {link}")
     browser.get(link)
-    input_area = browser.find_element_by_css_selector("#ember90")
+
+    input_area = WebDriverWait(browser, 5).until(
+        EC.visibility_of((By.ID,"#ember90"))
+    )
     answer = math.log(int(time.time()-0.2))
     input_area.send_keys(answer)
     btn = browser.find_element_by_css_selector("button.submit-submission")
