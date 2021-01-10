@@ -21,7 +21,7 @@ def test_links(browser, link):
     browser.get(link)
 
     input_area = WebDriverWait(browser, 5).until(
-        EC.visibility_of((By.CLASS,"ember-text-area"))
+        EC.visibility_of((By.CLASS_NAME,"ember-text-area"))
     )
 
     answer = math.log(int(time.time()-0.2))
@@ -31,7 +31,7 @@ def test_links(browser, link):
     btn.click()
 
     output_area = WebDriverWait(browser, 5).until(
-        EC.visibility_of((By.CLASS, "smart-hints__feedback"))
+        EC.visibility_of((By.CLASS_NAME, "smart-hints__feedback"))
     )
     output_text=output_area.text
 
