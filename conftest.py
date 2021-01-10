@@ -1,6 +1,4 @@
 import pytest
-import time
-import math
 from selenium import webdriver
 
 @pytest.fixture(scope="function")
