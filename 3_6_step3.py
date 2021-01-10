@@ -25,9 +25,13 @@ def test_links(browser):
     print(f"start test {link}")
     browser.get(link)
 
-    input_area = WebDriverWait(browser, 5).until(
-        EC.visibility_of((By.CLASS_NAME,"ember-text-area"))
-    )
+    browser.implicitly_wait(5)
+
+    #input_area = WebDriverWait(browser, 5).until(
+    #    EC.visibility_of((By.CLASS_NAME,"ember-text-area"))
+    #)
+
+    input_area=browser.find_element_by_css_selector(".ember-text-area")
 
     answer = calc()
     input_area.send_keys(answer)
@@ -35,9 +39,10 @@ def test_links(browser):
     btn = browser.find_element_by_css_selector("button.submit-submission")
     btn.click()
 
-    output_area = WebDriverWait(browser, 5).until(
-        EC.visibility_of((By.CLASS_NAME, "smart-hints__feedback"))
-    )
+    #output_area = WebDriverWait(browser, 5).until(
+    #    EC.visibility_of((By.CLASS_NAME, "smart-hints__feedback"))
+    #)
+    output_area=browser.find_element_by_css_selector(".smart-hints__feedback")
     output_text = output_area.text
 
     assert output_text == "Correct!", f"other text - {output_text}"
